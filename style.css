@@ -29,6 +29,11 @@
     background-color: #404040;
 }
 
+.TPPic{
+  height: 400px;
+  width: 500px;
+}
+
 .sponser {
   margin: 25px;
 }
@@ -36,17 +41,6 @@
 .pic {
   border-radius: 10px;
 }
-
-.bi{
-  
-}
-
-
-
-
-
-
-
 
 .pb{
   font-weight: bold;
