@@ -107,10 +107,12 @@ function listUpcomingEvents() {
         if (!when) {
           when = event.start.date;
         }
-        appendPre(event.summary + ' (' + when + ')')
+        appendPre(event.summary + ' ( ' + when + ' )')
       }
     } else {
       appendPre('No upcoming events found.');
     }
   });
 }
+
+listUpcomingEvents()

@@ -67,15 +67,18 @@
         </div>
     </nav>
 
-    <p>Google Calendar API Quickstart</p>
+    <h1 style="color: #0668b3">Next Event!</h1>
 
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" >Authorize</button>
-    <button id="signout_button" >Sign Out</button>
+    <p id="EventTitle"></p>
+    <p id="EventDate"> When: </p>
+    <p id="EventStart"> Start: </p>
+    <p id="EventEnd"> End: </p>
+    <p id="EventLocation"> Where: </p>
+    <p id="EventDescription"> What: </p>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
-    <script src="script.js"></script>
+    <script src="sheet.js"></script>
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
