@@ -72,5 +72,11 @@ function listDetails() {
     }
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
+    document.getElementById('EventTitle').appendChild(document.createTextNode(row[0]));
+        document.getElementById('EventDate').appendChild(document.createTextNode(row[1]));
+        document.getElementById('EventStart').appendChild(document.createTextNode(row[2]));
+        document.getElementById('EventEnd').appendChild(document.createTextNode(row[3]));
+        document.getElementById('EventLocation').appendChild(document.createTextNode(row[4]));
+        document.getElementById('EventDescription').appendChild(document.createTextNode(row[5]));
   });
 }
