@@ -66,6 +66,7 @@ function listDetails() {
         document.getElementById('EventEnd').appendChild(document.createTextNode(row[3]));
         document.getElementById('EventLocation').appendChild(document.createTextNode(row[4]));
         document.getElementById('EventDescription').appendChild(document.createTextNode(row[5]));
+        document.getElementById('mapLocation').src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBmiTvmgAPTTZEcSBVVy3xSHXNxCRdRA9I&q=" + JSON.stringify(row[4]);
       }
     } else {
       appendPre('No data found.');

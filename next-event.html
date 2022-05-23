@@ -67,15 +67,28 @@
         </div>
     </nav>
 
-    <h1 style="color: #0668b3">Next Event!</h1>
+    <div class="container text-center">
+        <h1 style="color: #0668b3">Next Event!</h1>
 
-    <p id="EventTitle"></p>
-    <p id="EventDate"> When: </p>
-    <p id="EventStart"> Start: </p>
-    <p id="EventEnd"> End: </p>
-    <p id="EventLocation"> Where: </p>
-    <p id="EventDescription"> What: </p>
-    <p id="weather"></p>
+        <p id="EventTitle"></p>
+        <p id="EventDate"> When: </p>
+        <p id="EventStart"> Start: </p>
+        <p id="EventEnd"> End: </p>
+        <p id="EventLocation"> Where: </p>
+        <p id="EventDescription"> What: </p>
+        <p id="weather"></p>
+
+        <iframe
+            id="mapLocation"
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src=""> 
+        </iframe>
+    </div>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
