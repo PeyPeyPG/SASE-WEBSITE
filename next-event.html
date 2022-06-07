@@ -68,27 +68,44 @@
     </nav>
 
     <div class="container text-center">
-        <h1 style="color: #0668b3">Next Event!</h1>
+        <h1 style="color: #0668b3">NEXT EVENT!</h1>
 
-        <p id="EventTitle"></p>
-        <p id="EventDate"> When: </p>
-        <p id="EventStart"> Start: </p>
-        <p id="EventEnd"> End: </p>
-        <p id="EventLocation"> Where: </p>
-        <p id="EventDescription"> What: </p>
+        <div class="row mt-4">
+            <div class="col">
+                <h4 id="EventTitle"></p>
+            </div>
+            <div class="col">
+                <h5 id="EventDate"></h5>
+                <h5 id="EventEnd"><span id="EventStart"></span></h5>
+
+            </div>
+            <div class="col">
+                <h5 id="EventLocation"></h5>
+            </div>
+        </div>
         <p id="weather"></p>
+    </div>
 
+    <div class="container text-center">
         <iframe
             id="mapLocation"
-            width="600"
-            height="450"
+            width="100%"
+            height="500"
             style="border:0"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
             src=""> 
         </iframe>
+    
+
+    
+        <h4>DESCRIPTION</h4>
+        <h5 id="EventDescription"></h5>
     </div>
+    
+
+
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -98,9 +115,6 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
-    <img src="WIP.png" style="width:100vw; "/>
-
 
     <!-- Footer -->
     <div>

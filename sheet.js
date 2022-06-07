@@ -61,9 +61,9 @@ function listDetails() {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
         document.getElementById('EventTitle').appendChild(document.createTextNode(row[0]));
-        document.getElementById('EventDate').appendChild(document.createTextNode(row[1]));
         document.getElementById('EventStart').appendChild(document.createTextNode(row[2]));
-        document.getElementById('EventEnd').appendChild(document.createTextNode(row[3]));
+        document.getElementById('EventEnd').appendChild(document.createTextNode(" - " + row[3]));
+        document.getElementById('EventDate').appendChild(document.createTextNode(row[1]));
         document.getElementById('EventLocation').appendChild(document.createTextNode(row[4]));
         document.getElementById('EventDescription').appendChild(document.createTextNode(row[5]));
         document.getElementById('mapLocation').src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBmiTvmgAPTTZEcSBVVy3xSHXNxCRdRA9I&q=" + JSON.stringify(row[4]);
