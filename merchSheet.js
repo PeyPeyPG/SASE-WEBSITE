@@ -51,21 +51,22 @@ function appendPre(message) {
  */
 function listDetails() {
   gapi.client.sheets.spreadsheets.values.get({
-    spreadsheetId: '1rx0h6ejTAwF0acmcd-0FbC0baeuIfdQBLFVdaDJGxTk',
+    spreadsheetId: '11sJF5NUbYlSKP-suKC6kBJOX9VX8oasFjB-qAQfOA18',
     range: 'Sheet1',
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
-      for (i = 0; i < range.values.length; i++) {
+      for (i = 1; i < range.values.length; i++) {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
-        document.getElementById('EventTitle').appendChild(document.createTextNode(row[0]));
-        document.getElementById('EventStart').appendChild(document.createTextNode(row[2]));
-        document.getElementById('EventEnd').appendChild(document.createTextNode(" - " + row[3]));
-        document.getElementById('EventDate').appendChild(document.createTextNode(row[1]));
-        document.getElementById('EventLocation').appendChild(document.createTextNode(row[4]));
-        document.getElementById('EventDescription').appendChild(document.createTextNode(row[5]));
-        document.getElementById('mapLocation').src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBmiTvmgAPTTZEcSBVVy3xSHXNxCRdRA9I&q=" + JSON.stringify(row[4]);
+        document.getElementById('photo').appendChild(document.createTextNode(row[0]));
+        console.log(row[0])
+        document.getElementById('name').appendChild(document.createTextNode(row[1]));
+        console.log(row[1])
+        document.getElementById('description').appendChild(document.createTextNode(row[2]));
+        console.log(row[2])
+        document.getElementById('price').appendChild(document.createTextNode(row[3]));
+        console.log(row[3])
       }
     } else {
       appendPre('No data found.');
