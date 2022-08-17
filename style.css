@@ -135,3 +135,18 @@ body{
 .shirt:hover {
   background: #8b6bb3;
 }
+
+.shop-button-div {
+  border: 3px solid #c5b5d9;
+  width: 50px;
+  text-align: center;
+}
+
+.shop-button-div:hover {
+  border-color: #8b6bb3;
+  cursor: pointer;
+}
+
+.shop-button-div.selected{
+  border-color: #8b6bb3;
+}
