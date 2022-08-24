@@ -238,6 +238,70 @@
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PayPal Standard Payments Integration | Client Demo</title>
+  </head>
+
+  <body>
+    <div id="paypal-button-container"></div>
+    <!-- Sample PayPal credentials (client-id) are included -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AV-Snu_5ok1XDsXnqAYGHJNNANm6HCN3CsIjXIlVX1CBY-mCiBk-B4iQD6KdGxiVjkWNsgY8fjalEZft&currency=USD&intent=capture&enable-funding=venmo" data_source="integrationbuilder"></script>
+    <script>
+      const paypalButtonsComponent = paypal.Buttons({
+          // optional styling for buttons
+          // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+          style: {
+            color: "gold",
+            shape: "rect",
+            layout: "vertical"
+          },
+
+          // set up the transaction
+          createOrder: (data, actions) => {
+              // pass in any options from the v2 orders create call:
+              // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+              const createOrderPayload = {
+                  purchase_units: [
+                      {
+                          amount: {
+                              value: "1.00"
+                          }
+                      }
+                  ]
+              };
+
+              return actions.order.create(createOrderPayload);
+          },
+
+          // finalize the transaction
+          onApprove: (data, actions) => {
+              const captureOrderHandler = (details) => {
+                  const payerName = details.payer.name.given_name;
+                  console.log('Transaction completed');
+              };
+
+              return actions.order.capture().then(captureOrderHandler);
+          },
+
+          // handle unrecoverable errors
+          onError: (err) => {
+              console.error('An error prevented the buyer from checking out with PayPal');
+          }
+      });
+
+      paypalButtonsComponent
+          .render("#paypal-button-container")
+          .catch((err) => {
+              console.error('PayPal Buttons failed to render');
+          });
+    </script>
+  </body>
+</html>
+
   <!-- Footer -->
   <div>
     <footer class="text-center text-lg-start bg-dark text-white">
